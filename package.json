@@ -4,11 +4,51 @@
   "version": "0.0.0",
   "type": "module",
   "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "electron:dev": "env -u ELECTRON_RUN_AS_NODE electron .",
+    "electron:build": "vite build && electron-builder"
+  },
   "dependencies": {
     "lucide-react": "^1.66.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "recharts": "^3.10.1",
     "speedtest-net": "^2.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.6.2",
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0",
+    "electron-is-dev": "^3.0.1",
+    "oxlint": "^1.89.0",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5"
+  },
+  "build": {
+    "appId": "com.yasmina.speedpulse",
+    "productName": "SpeedPulse",
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist-electron"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Utility"
+    }
   }
 }
