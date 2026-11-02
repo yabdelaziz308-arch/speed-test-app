@@ -1,7 +1,8 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
-import isDev from 'electron-is-dev';
 import { fileURLToPath } from 'url';
+
+const isDev = !app.isPackaged;
 
 app.commandLine.appendSwitch('no-sandbox');
 app.commandLine.appendSwitch('ozone-platform-hint', 'auto');
@@ -15,6 +16,7 @@ function createWindow() {
     height: 768,
     minWidth: 800,
     minHeight: 600,
+    icon: path.join(__dirname, 'public/icon.png'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

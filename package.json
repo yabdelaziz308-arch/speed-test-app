@@ -36,10 +36,12 @@
   "build": {
     "appId": "com.yasmina.speedpulse",
     "productName": "SpeedPulse",
+    "icon": "public/icon.png",
     "files": [
       "dist/**/*",
       "main.js",
-      "package.json"
+      "package.json",
+      "public/icon.png"
     ],
     "directories": {
       "output": "dist-electron"
@@ -48,7 +50,8 @@
       "target": [
         "AppImage"
       ],
-      "category": "Utility"
+      "category": "Utility",
+      "icon": "public/icon.png"
     }
   }
 }
